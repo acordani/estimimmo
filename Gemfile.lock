@@ -199,6 +199,9 @@ GEM
     unf_ext (0.0.7.2)
     warden (1.2.6)
       rack (>= 1.0)
+    wicked_pdf (1.0.4)
+    wkhtmltopdf-binary (0.9.9.3)
+    wkhtmltopdf-heroku (2.12.2.4)
 
 PLATFORMS
   ruby
@@ -230,6 +233,9 @@ DEPENDENCIES
   simple_form
   spring
   uglifier
+  wicked_pdf
+  wkhtmltopdf-binary
+  wkhtmltopdf-heroku (~> 2.12.2.1)
 
 BUNDLED WITH
    1.11.2

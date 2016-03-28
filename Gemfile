@@ -25,6 +25,10 @@ gem "attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
 
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-heroku', '~> 2.12.2.1'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

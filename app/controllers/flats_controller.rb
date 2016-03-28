@@ -6,6 +6,16 @@ class FlatsController < ApplicationController
 
   def show
     @flat = Flat.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "",
+               template: 'flats/show.pdf.erb',
+               layout: 'layouts/pdf.html.erb',  # layout used
+               show_as_html: params[:debug].present?
+      end
+    end
   end
 
   def new
