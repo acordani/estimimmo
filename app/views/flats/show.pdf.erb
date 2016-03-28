@@ -5,19 +5,94 @@
 
 
   </div>
-
-  <div class='col-xs-12'>
-
-
-    <h4><%= @flat.first_name %> <%= @flat.last_name %></h4>
-    <div class="address text-center">
-    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCwCp3To_EfAyq9Yt0-x9O2KfQMU4dLRw8&zoom=15&size=600x300&sensor=false&maptype=roadmap&markers=color:red|#{@flat.full_street_address}", class: "item-show-map" %>
+  <div class="container">
+    <div class="row">
+      <div class='col-xs-12'>
+        <div class="address text-center">
+        <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCwCp3To_EfAyq9Yt0-x9O2KfQMU4dLRw8&zoom=15&size=600x300&sensor=false&maptype=roadmap&markers=color:red|#{@flat.full_street_address}", class: "item-show-map" %>
+        </div>
+      </div>
     </div>
-
-
+    <div class="row">
+      <div class="col-xs-5">
+        <h4>propriétaire(s)</h4>
+      </div>
+      <div class="col-xs-5">
+        <h4><%= @flat.first_name %> <%= @flat.last_name %></h4>
+      </div>
+    </div>
+    <% if @flat.surface_land.present? %>
+      <div class="row">
+        <div class="col-xs-5">
+          <h4>Surface du terrain</h4>
+        </div>
+        <div class="col-xs-5">
+          <h4><%= @flat.surface_land %>  m²</h4>
+        </div>
+      </div>
+    <% end %>
+    <% if @flat.surface_habitation.present? %>
+      <div class="row">
+        <div class="col-xs-5">
+          <h4>Surface habitable</h4>
+        </div>
+        <div class="col-xs-5">
+          <h4><%= @flat.surface_habitation %>  m²</h4>
+        </div>
+      </div>
+    <% end %>
+    <% if @flat.common_wall.present? %>
+      <div class="row">
+        <div class="col-xs-5">
+          <h4>Nb. murs mitoyens</h4>
+        </div>
+        <div class="col-xs-5">
+          <h4><%= @flat.common_wall %>  </h4>
+        </div>
+      </div>
+    <% end %>
+    <% if @flat.rooms.present? %>
+      <div class="row">
+        <div class="col-xs-5">
+          <h4>Nb. de pièces</h4>
+        </div>
+        <div class="col-xs-5">
+          <h4><%= @flat.rooms %>  pièces</h4>
+        </div>
+      </div>
+    <% end %>
+    <% if @flat.bedroom.present? %>
+      <div class="row">
+        <div class="col-xs-5">
+          <h4>Nb. de chambre</h4>
+        </div>
+        <div class="col-xs-5">
+          <h4><%= @flat.bedroom %>  </h4>
+        </div>
+      </div>
+    <% end %>
+    <% if @flat.bathroom.present? %>
+      <div class="row">
+        <div class="col-xs-5">
+          <h4>Salle(s) de bains</h4>
+        </div>
+        <div class="col-xs-5">
+          <h4><%= @flat.bathroom %>  </h4>
+        </div>
+      </div>
+    <% end %>
+    <% if @flat.year_construction.present? %>
+      <div class="row">
+        <div class="col-xs-5">
+          <h4>Année de construction</h4>
+        </div>
+        <div class="col-xs-5">
+          <h4><%= @flat.year_construction %>  </h4>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  </div>
+</div>
 
 <div class="page">
   <h4><%= @flat.first_name %> <%= @flat.last_name %></h4>
