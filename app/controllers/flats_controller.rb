@@ -36,6 +36,10 @@ class FlatsController < ApplicationController
       :bathroom,
       :surface_carrez,
       :year_construction,
+      :latitude,
+      :longitude,
+      :address,
+      :city,
       photos: [])
   end
 

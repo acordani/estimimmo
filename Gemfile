@@ -18,6 +18,8 @@ gem 'autoprefixer-rails'
 
 gem 'devise'
 
+gem "geocoder"
+
 gem 'cloudinary'
 gem "attachinary"
 gem "jquery-fileupload-rails"
