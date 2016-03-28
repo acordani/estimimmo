@@ -1,14 +1,24 @@
-
+<div class="page">
+  <h1> 1. Fiche d'identité de votre maison </h1>
+  <hr>
   <div class="text-center">
 
 
   </div>
 
   <div class='col-xs-12'>
-    <div class="address text-center">
+
 
     <h4><%= @flat.first_name %> <%= @flat.last_name %></h4>
+    <div class="address text-center">
+    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCwCp3To_EfAyq9Yt0-x9O2KfQMU4dLRw8&zoom=15&size=600x300&sensor=false&maptype=roadmap&markers=color:red|#{@flat.full_street_address}", class: "item-show-map" %>
     </div>
 
 
   </div>
+
+  </div>
+
+<div class="page">
+  <h4><%= @flat.first_name %> <%= @flat.last_name %></h4>
+</div>

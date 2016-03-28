@@ -1,6 +1,7 @@
 <%= simple_form_for @flat do |f| %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
+  <%= f.input :address %>
   <%= f.input :photos, as: :attachinary %>
   <%= f.button :submit %>
 <% end %>
