@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328092816) do
+ActiveRecord::Schema.define(version: 20160503183139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20160328092816) do
 
   add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
 
+  create_table "comparatives", force: :cascade do |t|
+    t.string   "adress"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.string   "surface"
+    t.string   "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "flats", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -49,6 +59,14 @@ ActiveRecord::Schema.define(version: 20160328092816) do
     t.float    "longitude"
     t.string   "city"
     t.string   "address"
+  end
+
+  create_table "lands", force: :cascade do |t|
+    t.string   "address"
+    t.string   "neighborhood"
+    t.string   "city"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
