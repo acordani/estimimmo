@@ -1,5 +1,5 @@
 <% @lands.each do |land| %>
-	<%= land.address %>
+	<%= link_to land.address, land %>
 	<%= land.neighborhood %>
 	<%= land.city %>
 <% end %>
