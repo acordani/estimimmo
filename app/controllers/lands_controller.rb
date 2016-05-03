@@ -4,7 +4,7 @@ class LandsController < ApplicationController
 	end
 
 	def show
-		@land = Land.find(params[:id])
+		@land = Land.friendly.find(params[:id])
 	end
 
 	def new
@@ -17,7 +17,7 @@ class LandsController < ApplicationController
 	end
 
 	def create
-		@land = Land.find(land_params)
+		@land = Land.friendly.find(land_params)
 		if @land.save
 			redirect_to land_path(@land)
 		else
@@ -29,7 +29,8 @@ class LandsController < ApplicationController
   		params.require(:land).permit(
       	:address,
       	:neighborhood,
-      	:city
+      	:city,
+      	:slug
       	)
   	end
 
