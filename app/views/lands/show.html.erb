@@ -1,3 +1,7 @@
+<% content_for :meta_title, "estimer votre bien immobilier à #{@land.address} , #{@land.city} €" %>
+<% content_for :meta_description, @land.address %>
+
+
 <h1> Votre estimation immobilière au <%= @land.address %> <%= @land.city %> </h1>
 
 <%= @land.address %>
