@@ -1,10 +1,11 @@
-xml.instruct!
-xml.urlset(
-  'xmlns'.to_sym => "http://www.sitemaps.org/schemas/sitemap/0.9",
-) do
-  @lands.each do |f|
+xml.instruct! :xml, :version => "1.0"
+xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
+  for post in @flats do
     xml.url do
-      xml.loc "#{land_url(land)}"
-      xml.lastmod land.updated_at.strftime("%F")
+      xml.loc flat_url(flat)
+      xml.lastmod post.updated_at.to_date
+      xml.changefreq "monthly"
+      xml.priority "0.5"
     end
   end
+end

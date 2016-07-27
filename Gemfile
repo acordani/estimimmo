@@ -22,6 +22,8 @@ gem 'friendly_id', '~> 5.1.0'
 
 gem "geocoder"
 
+gem "dynamic_sitemaps"
+
 gem 'cloudinary'
 gem "attachinary"
 gem "jquery-fileupload-rails"

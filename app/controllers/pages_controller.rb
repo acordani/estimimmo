@@ -4,13 +4,16 @@ class PagesController < ApplicationController
 
   	def robots
   		respond_to :text
+  		expires_in 6.hours, public: true
 	end
 
 	def sitemap
-    	@lands = Land.all
-    respond_to do |format|
-      format.xml
-    end
-  end
+	    @flats = Flat.all
+	    respond_to do |format|
+	        format.xml { render layout: false }
+	        format.txt { render layout: false }
+	    end
+	end
 
+	
 end

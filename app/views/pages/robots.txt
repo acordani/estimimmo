@@ -1,7 +1,0 @@
-<% if Rails.env == "production" %>
-	<%= "User-Agent: *\n" %>
-	<%= "Disallow: /admin" %>
-<% else %>
-	<%= "User-Agent: *\n" %>
-	<%= "Noindex: /" %>
-<% end %>

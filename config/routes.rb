@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   end
 
   get '/robots.:format' => 'pages#robots'
+  get "sitemap.xml" => "sitemaps#index", :format => "xml", :as => :sitemap
 
-  get '/sitemap.xml' => 'pages#sitemap', defaults: { format: 'xml' }
+  
 
   mount Attachinary::Engine => "/attachinary"
   # The priority is based upon order of creation: first created -> highest priority.
